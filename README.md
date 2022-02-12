@@ -66,8 +66,10 @@ To run the best practices examples, use Pipenv to run the script of choice. The 
 ```
 pipenv run best-practice-desktop-us
 pipenv run best-practice-desktop-eu
-pipenv run best-practice-mobile-web-us
-pipenv run best-practice-mobile-web-eu
+pipenv run best-practice-mobile-web-vdc-us
+pipenv run best-practice-mobile-web-vdc-eu
+pipenv run best-practice-mobile-web-rdc-us
+pipenv run best-practice-mobile-web-rdc-eu
 pipenv run best-practice-mobile-native-us-android
 pipenv run best-practice-mobile-native-eu-android
 pipenv run best-practice-mobile-native-us-ios
