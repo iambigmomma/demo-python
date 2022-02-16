@@ -1,3 +1,4 @@
 --variable browserName:chrome
 --variable platform:windows 10
 --variable version:latest
+--variable remote_url:https://www.saucedemo.com/v1/inventory.html

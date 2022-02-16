@@ -5,6 +5,8 @@ from selenium import webdriver
 from appium import webdriver as appiumdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.remote.remote_connection import RemoteConnection
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 import urllib3
 urllib3.disable_warnings()
@@ -91,14 +93,16 @@ def mobile_web_driver(request, data_center):
     else:
         selenium_endpoint = "https://{}:{}@ondemand.us-west-1.saucelabs.com/wd/hub".format(username, access_key)
 
-    caps = dict()
-    caps.update(request.param)
-    caps.update({'build': build_tag})
-    caps.update({'name': test_name})
+    options = ChromeOptions()
+    sauce_options = {}
+    sauce_options.update(request.param)
+    sauce_options['build'] = build_tag
+    sauce_options['name'] = test_name
+    options.set_capability('sauce:options', sauce_options)
 
     browser = webdriver.Remote(
         command_executor=selenium_endpoint,
-        desired_capabilities=caps, 
+        options=options, 
         keep_alive=True
     )
 
@@ -132,14 +136,16 @@ def desktop_web_driver(request, data_center):
     else:
         selenium_endpoint = "https://{}:{}@ondemand.us-west-1.saucelabs.com/wd/hub".format(username, access_key)
 
-    caps = dict()
-    caps.update(request.param)
-    caps['sauce:options'].update({'build': build_tag})
-    caps['sauce:options'].update({'name': test_name})
+    options = ChromeOptions()
+    sauce_options = {}
+    sauce_options.update(request.param)
+    sauce_options['build'] = build_tag
+    sauce_options['name'] = test_name
+    options.set_capability('sauce:options', sauce_options)
 
     browser = webdriver.Remote(
         command_executor=selenium_endpoint,
-        desired_capabilities=caps, 
+        options=options,
         keep_alive=True
     )
 
