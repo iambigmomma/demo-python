@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 
 def test_add_to_cart(mobile_web_driver):
     mobile_web_driver.get('https://www.saucedemo.com/v1/inventory.html')

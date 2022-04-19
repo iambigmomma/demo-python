@@ -1,4 +1,6 @@
 
+from selenium.webdriver.common.by import By
+
 def test_valid_crentials_login(mobile_web_driver):
     mobile_web_driver.get('https://www.saucedemo.com/v1')
 
