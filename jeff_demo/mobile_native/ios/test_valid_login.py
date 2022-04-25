@@ -8,5 +8,5 @@ def test_standard_user(ios_rdc_driver):
     ios_rdc_driver.find_element(by="accessibility id", value="tab bar option menu").click()
     ios_rdc_driver.find_element(by="accessibility id", value="menu item log in").click()
 
-    assert ios_rdc_driver.find_element(by="accessibility id", value="Sorry, this user has been locked out.").is_displayed()
+    assert ios_rdc_driver.find_element(by="accessibility id", value="Go Shopping button").is_displayed()
 
