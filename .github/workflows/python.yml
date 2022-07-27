@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - uses: saucelabs/sauce-connect-action@v2
+      - uses: saucelabs/sauce-connect-action@v2.1.1
         with:
           username: ${{ secrets.SAUCE_USERNAME }}
           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
