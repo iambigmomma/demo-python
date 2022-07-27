@@ -18,6 +18,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+      - uses: saucelabs/sauce-connect-action@v2
+              with:
+                  username: ${{ secrets.SAUCE_USERNAME }}
+                  accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+                  tunnelName: github-action-tunnel
+                  configFile: ${{ github.workspace }}/sc-configuration/config.yaml
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies
@@ -26,4 +32,4 @@ jobs:
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        run: pipenv run ${{ matrix.test }}
+        run: pipenv run ${{ matrix.test }} --tunnel-name github-action-tunnel
