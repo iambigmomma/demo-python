@@ -1,4 +1,4 @@
-name: Demo Python Tests
+name: Cronjob - Python Tests
 
 on:
   schedule:
