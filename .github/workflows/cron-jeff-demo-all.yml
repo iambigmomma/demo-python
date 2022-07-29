@@ -1,8 +1,8 @@
 name: Cron Job Jeff Demo Python Tests
 
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
   schedule:
     - cron: "* */6 * * *"
 
