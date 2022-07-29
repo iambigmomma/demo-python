@@ -1,8 +1,8 @@
 name: Demo Python Tests
 
 on:
-  - push
-  - pull_request
+  schedule:
+    - cron: "5 0 * * *"
 
 jobs:
   python-tests:
@@ -13,11 +13,6 @@ jobs:
       matrix:
         test: [jeff-demo-desktop-eu, jeff-demo-mobile-web-vdc-eu, jeff-demo-mobile-web-rdc-eu, jeff-demo-mobile-native-eu-android, jeff-demo-mobile-native-eu-ios]
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
       - uses: saucelabs/sauce-connect-action@v2.1.1
         with:
           username: ${{ secrets.SAUCE_USERNAME }}
