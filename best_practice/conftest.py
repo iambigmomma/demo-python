@@ -4,9 +4,6 @@ from os import environ
 from selenium import webdriver
 from appium import webdriver as appiumdriver
 from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.remote.remote_connection import RemoteConnection
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 import urllib3
 urllib3.disable_warnings()
