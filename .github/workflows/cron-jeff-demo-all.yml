@@ -1,8 +1,10 @@
-name: Jeff Demo Python Tests
+name: Cron Job Jeff Demo Python Tests
 
 on:
   - push
   - pull_request
+  schedule:
+    - cron: "* */6 * * *"
 
 jobs:
   python-tests:
