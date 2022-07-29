@@ -13,6 +13,11 @@ jobs:
       matrix:
         test: [jeff-demo-desktop-eu, jeff-demo-mobile-web-vdc-eu, jeff-demo-mobile-web-rdc-eu, jeff-demo-mobile-native-eu-android, jeff-demo-mobile-native-eu-ios]
     steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies
