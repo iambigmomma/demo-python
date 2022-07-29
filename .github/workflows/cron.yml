@@ -1,4 +1,4 @@
-name: Cronjob - Python Tests
+name: Cron Job - Python Tests
 
 on:
   schedule:
@@ -13,12 +13,6 @@ jobs:
       matrix:
         test: [jeff-demo-desktop-eu, jeff-demo-mobile-web-vdc-eu, jeff-demo-mobile-web-rdc-eu, jeff-demo-mobile-native-eu-android, jeff-demo-mobile-native-eu-ios]
     steps:
-      - uses: saucelabs/sauce-connect-action@v2.1.1
-        with:
-          username: ${{ secrets.SAUCE_USERNAME }}
-          accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
-          tunnelName: github-action-tunnel
-          configFile: ${{ github.workspace }}/sc-configuration/config.yaml
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install dependencies
