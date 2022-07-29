@@ -23,11 +23,11 @@ best-practice-mobile-native-eu-android = "pytest -n2 --dc=eu best_practice/mobil
 best-practice-mobile-native-us-ios = "pytest -n2 --dc=us best_practice/mobile_native/ios"
 best-practice-mobile-native-eu-ios = "pytest -n2 --dc=eu best_practice/mobile_native/ios"
 
-jeff-demo-desktop-eu = "pytest -n8 --dc=eu jeff_demo/desktop_web/"
-jeff-demo-mobile-web-vdc-eu = "pytest -n8 --dc=eu jeff_demo/mobile_web/vdc"
-jeff-demo-mobile-web-rdc-eu = "pytest -n4 --dc=eu jeff_demo/mobile_web/rdc"
-jeff-demo-mobile-native-eu-android = "pytest -n2 --dc=eu jeff_demo/mobile_native/android"
-jeff-demo-mobile-native-eu-ios = "pytest -n2 --dc=eu jeff_demo/mobile_native/ios"
+jeff-demo-desktop-eu = "pytest -n8 --dc=eu jeff-demo/desktop_web/"
+jeff-demo-mobile-web-vdc-eu = "pytest -n8 --dc=eu jeff-demo/mobile_web/vdc"
+jeff-demo-mobile-web-rdc-eu = "pytest -n4 --dc=eu jeff-demo/mobile_web/rdc"
+jeff-demo-mobile-native-eu-android = "pytest -n2 --dc=eu jeff-demo/mobile_native/android"
+jeff-demo-mobile-native-eu-ios = "pytest -n2 --dc=eu jeff-demo/mobile_native/ios"
 
 headless = "pytest -n4 examples/headless/test_demo.py"
 saucebindings-pytest = "pytest -n2 examples/sauce_bindings/pytest/"
